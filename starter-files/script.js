@@ -59,7 +59,7 @@ function getLyrics(e) {
 
 function searchQuery() {
     const query = searchInput.val();
-    if (isInputEmpty(query)) { 
+    if (isInputEmpty(query)) {
         return;
     };
 
@@ -78,6 +78,9 @@ function searchQuery() {
         error: function () {
             showSearchError();
             scrollToSearchResults();
+            setTimeout(function () {
+                location.reload();
+            }, 4000);
         },
     });
 
